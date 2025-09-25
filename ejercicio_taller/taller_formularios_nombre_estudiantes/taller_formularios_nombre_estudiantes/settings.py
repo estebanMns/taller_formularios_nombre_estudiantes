@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -100,6 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'asistencia/static'),
+    os.path.join(BASE_DIR, 'solicitudes/static'), # Si decides tener archivos estáticos en solicitudes
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
