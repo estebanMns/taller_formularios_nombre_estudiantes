@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .forms import AsistenciaForm
 
-# Create your views here.
+
+def registro_asistencia(request):
+    form = AsistenciaForm()
+    context = {'form': form}
+    return render(request, 'asistencia/registro_asistencia.html', context)
